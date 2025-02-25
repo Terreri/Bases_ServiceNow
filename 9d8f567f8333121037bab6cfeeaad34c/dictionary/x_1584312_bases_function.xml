@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c5ef1e7f8333121037bab6cfeeaad3f2" label="Function" max_length="40" name="x_1584312_bases_function" type="collection">
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
+    </element>
+</database>

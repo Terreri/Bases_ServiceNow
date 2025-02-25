@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="fb90aebf8333121037bab6cfeeaad374" extends="task" label="Registration" max_length="40" name="x_1584312_bases_registration" type="collection">
+        <element label="Function" max_length="32" name="function" reference="x_1584312_bases_function" type="reference"/>
+        <element label="Base" max_length="32" name="base" reference="x_1584312_bases_base" type="reference"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+    </element>
+</database>

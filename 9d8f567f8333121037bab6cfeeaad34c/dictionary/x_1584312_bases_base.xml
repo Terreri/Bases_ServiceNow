@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0910a2bf8333121037bab6cfeeaad377" label="Base" max_length="40" name="x_1584312_bases_base" type="collection">
+        <element label="Temperature in Celsius" max_length="40" name="temperature_in_celsius" type="integer"/>
+        <element label="Base Manager" max_length="32" name="base_manager" reference="sys_user" type="reference"/>
+        <element label="Longitude" max_length="100" name="longitude" type="string"/>
+        <element label="City" max_length="40" name="city" type="string"/>
+        <element label="Max Capacity" max_length="40" name="max_capacity" type="integer"/>
+        <element label="State" max_length="40" name="state" type="string"/>
+        <element label="Latitude" max_length="100" name="latitude" type="string"/>
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <index name="index">
+            <element name="base_manager"/>
+        </index>
+    </element>
+</database>
