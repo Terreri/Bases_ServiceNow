@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1584312_bases.BasesUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>BasesUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var BasesUtils = Class.create();
+BasesUtils.prototype = {
+    initialize: function() {
+    },
+	refQualBases: function(){
+		var userRegistrate = false;
+		var basesNotToShow = [];
+		var grBases = new GlideRecord("x_1584312_bases_base");
+		grBases.query();
+
+		//Verifica se a base já não está cheia
+		while(grBases.next()){
+			var grRegistrations = new GlideRecord("x_1584312_bases_registration");
+			grRegistrations.addEncodedQuery("base=" + grBases.sys_id.toString() + "^stateIN2,3");
+			grRegistrations.query();
+		
+			var countRegistrations = 0;
+			while(grRegistrations.next()){
+				countRegistrations++;
+
+				if(grRegistrations.opened_by.sys_id.toString() == gs.getUserID().toString()){
+					userRegistrate = true;
+				}
+			}
+			if(countRegistrations >= grBases.max_capacity){
+				gs.info("A base"+ grBases.sys_id.toString()+"Foi adicionada aqui, porque" + countRegistrations +" É maior que"+ grBases.max_capacity);
+				basesNotToShow.push(grBases.sys_id.toString());
+			}
+		}
+
+		basesToShow = [];
+
+		grBases.query(); 
+        while(grBases.next()) {
+            if (basesNotToShow.indexOf(grBases.sys_id.toString()) == -1 && userRegistrate == false) {
+                basesToShow.push(grBases.sys_id.toString());
+            }
+        }
+
+		gs.info("basesToShow:" + basesToShow);
+		gs.info("basesnotToShow:" + basesNotToShow);
+
+		return "sys_idIN" + basesToShow.join(",");
+	},
+
+	refQualOpenBases: function(){
+		var basesNotToShow = [];
+		var grBases = new GlideRecord("x_1584312_bases_base");
+		grBases.query();
+
+		//Verifica se a base já não está cheia
+		while(grBases.next()){
+			var grRegistrations = new GlideRecord("x_1584312_bases_registration");
+			grRegistrations.addEncodedQuery("base=" + grBases.sys_id.toString() + "^stateIN2,3");
+			grRegistrations.query();
+		
+			var countRegistrations = 0;
+			while(grRegistrations.next()){
+				countRegistrations++;
+			}
+			if(countRegistrations >= grBases.max_capacity){
+				basesNotToShow.push(grBases.sys_id.toString());
+			}
+		}
+
+		basesToShow = [];
+
+		grBases.query(); 
+        while(grBases.next()) {
+            if (basesNotToShow.indexOf(grBases.sys_id.toString()) == -1) {
+                basesToShow.push(grBases.sys_id.toString());
+            }
+        }
+
+		return "sys_idIN" + basesToShow.join(",");
+	},
+		
+
+    type: 'BasesUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-26 13:14:27</sys_created_on>
+        <sys_id>0fac53808340221037bab6cfeeaad325</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>BasesUtils</sys_name>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name>sys_script_include_0fac53808340221037bab6cfeeaad325</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-26 18:10:06</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0fac53808340221037bab6cfeeaad325</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-26 13:14:26</sys_created_on>
+        <sys_id>285167c48340221037bab6cfeeaad3c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-26 13:14:26</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
