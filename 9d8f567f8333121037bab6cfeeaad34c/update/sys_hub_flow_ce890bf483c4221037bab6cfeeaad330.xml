@@ -1,0 +1,2704 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1741000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>weather_integration_subflow</internal_name>
+        <label_cache>[{"name":"flow_variable.integration_error_message","label":"Flow Variables➛Integration Error Message","type":"string","base_type":"string","usedInstances":{"3e876246-a6b4-4246-b6ae-7cb67282a436":["integration_error_message"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"2765cfd8-337f-4003-89ec-92e55592d694"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.temperature","label":"8 - Integration Yahoo Weather API➛temperature","reference_display":"temperature","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["temperature_in_celsius"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"dfe53698-0f95-4b36-87aa-224c7a0883b7"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.longitude","label":"8 - Integration Yahoo Weather API➛longitude","reference_display":"longitude","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["longitude"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"96b0a866-3a12-42de-873b-54a86626e110"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.latitude","label":"8 - Integration Yahoo Weather API➛latitude","reference_display":"latitude","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["latitude"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"60b461e3-b22d-421d-9101-a9c4bf636ff6"}},{"name":"146fda17-8716-43d3-9370-6e424bc8a944.duration","label":"12 - Convert Seconds into Duration➛Duration","reference_display":"Duration","type":"glide_duration","base_type":"glide_duration","usedInstances":{"0442897b-6b7f-465d-b7af-680c7878d53a":["timer_duration"]},"attributes":{"uiTypeLabel":"Duration","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"glide_duration","uiUniqueId":"6298db06-2d6c-49c6-bdc5-4524f940dec3"}},{"name":"flow_variable.retry_timeout","label":"Flow Variables➛Retry Timeout","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"146fda17-8716-43d3-9370-6e424bc8a944":["seconds"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7fab57bc-7fd2-4421-a421-6f1736ee96c5"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.__action_status__.message","label":"8 - Integration Yahoo Weather API➛Action Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"7aa34ecf-3d9b-45ba-ac4d-0560caf284ad":["integration_error_message-2"]},"attributes":{}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.__action_status__.code","label":"8 - Integration Yahoo Weather API➛Action Status➛Code","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"71ee3976-074a-447f-91db-af03d341b41e":["condition"]},"attributes":{}},{"name":"subflow.base","label":"Input➛Base","reference":"x_1584312_bases_base","reference_display":"Base","type":"reference","base_type":"reference","column_name":"","usedInstances":{"4fbe0e08-0223-473c-8e22-1ff059915531":["record"],"f4683f0d-fb1e-43ee-aba3-eafe550f116f":["record"],"8c36d611-fa28-41e2-9192-57a0170bbc06":["record"],"3e876246-a6b4-4246-b6ae-7cb67282a436":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d5d24f78-c5f5-45ef-9df1-591e1115c5f7","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.active","label":"Flow Variables➛Active","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"d0e557b2-6410-4bf9-919b-05c09d21046c":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"56a0ac90-3813-45e3-be65-eda8ac09974d"}},{"name":"flow_variable.integration_success","label":"Flow Variables➛Integration Success","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"f2dea444-f049-4bd1-8293-e7e4b29e7cb7":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"a4dd9c23-3c12-4fe9-8fcd-3878e3a8290a"}},{"name":"flow_variable.current_try","label":"Flow Variables➛Current Try","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"3bc93df3-1a36-4016-ae9c-5e316d34bcaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7f721a84-dcfd-45ab-9a58-8fd3db750204"}},{"name":"flow_variable.retry_count","label":"Flow Variables➛Retry Count","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"3bc93df3-1a36-4016-ae9c-5e316d34bcaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f06055be-d8cd-4c81-aa1d-5652af733576"}},{"name":"subflow.city","label":"Input➛city","type":"string","base_type":"string","usedInstances":{"82c73c55-3d8a-4c09-9365-5df17f8ebc77":["city"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"ac6dd96c-34db-42c4-80fb-73599d7f077c"}}]</label_cache>
+        <master_snapshot>1f20d3708308221037bab6cfeeaad3de</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Weather Integration Subflow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:25:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ce890bf483c4221037bab6cfeeaad330</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Weather Integration Subflow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name>sys_hub_flow_ce890bf483c4221037bab6cfeeaad330</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:55:01</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_ce890bf483c4221037bab6cfeeaad330^id=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN8e890bf483c4221037bab6cfeeaad331"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>ce890bf483c4221037bab6cfeeaad330</id>
+        <name>Weather Integration Subflow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:25:56</sys_created_on>
+        <sys_id>8e890bf483c4221037bab6cfeeaad331</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:25:56</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=8e890bf483c4221037bab6cfeeaad331"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=ce890bf483c4221037bab6cfeeaad330^sys_idNOT INf41c8ff883c4221037bab6cfeeaad357,f41c8ff883c4221037bab6cfeeaad35b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ac6dd96c-34db-42c4-80fb-73599d7f077c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>city</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>city</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:02</sys_created_on>
+        <sys_id>f41c8ff883c4221037bab6cfeeaad357</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f41c8ff883c4221037bab6cfeeaad357"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=d5d24f78-c5f5-45ef-9df1-591e1115c5f7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1584312_bases_base</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>base</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Base</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1584312_bases_base">x_1584312_bases_base</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>f41c8ff883c4221037bab6cfeeaad35b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f41c8ff883c4221037bab6cfeeaad35b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN731053708308221037bab6cfeeaad3fc"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=172de136-aaa4-4c96-bcce-f2e4d3d32e01</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>731053708308221037bab6cfeeaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:44</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=731053708308221037bab6cfeeaad3fc"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN091c073c83c4221037bab6cfeeaad3c3,402093708308221037bab6cfeeaad32b,451c073c83c4221037bab6cfeeaad3c6,4c2093708308221037bab6cfeeaad32d,842093708308221037bab6cfeeaad33c,851c073c83c4221037bab6cfeeaad3c0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>091c073c83c4221037bab6cfeeaad3c3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>f4683f0d-fb1e-43ee-aba3-eafe550f116f</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWviQBT9KzLPIvlQsb5tK8JCt4V28aVbwk3mRgcmHzszsbrif987ySSKLa6FvsjmITD3Y+acM+cmLzsmOJuyIXLPv/HHSeiHYeB5wWTox+Mw9gMeAqLP+iyHDKlSYVIoTus1yMoGdjtdxaks3gYxaNzvKcWFLiVsF66CIslKSK4wZ9OX1z4rQdFmBhWb7k5Sl6KREKOk0qcWzik8sy3tmhdJlWFuItEG713nzGV632eUoSYLx/f6DDcGc44EJAWpsc8yyDmYQm3Z1KiKAgqBP+Zy21WsRG4aohlstPhDJw89W5ciMUucCN0ycgI14XQGBp5p58RUqtOrEAnqRhOOKVTS3B3HmoLH0ogib1oMxLLtLmSV5Q+NIqzb4Og+Kk0gsLQ8LfKGVvq8Kt6eWpBzkdeSOIqySEB2KzBGibgyFs6OocRa4wzKUuTLqFTFWtTNBCUbLCUtBtYidKYWy3wAicU9IFVhMKf4rA4vQAlL4gdtQ837PtNbfSdB6wMV0jD6XVkkDTFHIapVqCWIaifY5kSJ0nyjo9bogO/7zu/x6JzDkpuDoY72PHh+E/mjyTD0g8h6Xtfv976/baKf8/4FyFrv/6xv/GOkzv7vYvfHvb2HJuHMP/oy80+uyfyOxtW7/1+e94KzX9UjJ9U210d+pxvGpQILO9IGDP6qPC/kwXvPn6n83BxcgLadg7lAyfUH8NshwIwgGowaOieD4JK9hUt2f4IvmwZ/7NXPFc3Ef/NDeP0Lhw/t1AIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Convert Seconds into Duration">230527a4831b121037bab6cfeeaad37e</action_type>
+        <action_type_parent display_value="Convert Seconds into Duration">5a842f60831b121037bab6cfeeaad34c</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>230527a4831b121037bab6cfeeaad37e</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>402093708308221037bab6cfeeaad32b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>146fda17-8716-43d3-9370-6e424bc8a944</ui_id>
+        <values>H4sIAAAAAAAA/41Sy27bMBD8F55lQfJT9q1IECBA2wB1m0sQCCtxZROgSIUPJ6rhf+/SZNUgufTI4ezuzOw+nZngbMfWi2I138CyWpRNOS+LxaaBZt12iAB8UZUsYwp6JKbFVituCTiB9AE5nzupX+sTGAGNxNygM2PtRI/au8uFmFzYQcL4mAoIaY9CcoOK7Z6eMzaAoeYODdudP3z9rzoJDUqi7id5n/S6cQiAUA4PNCoCX1Pd/YRqw4OQMmP45lBxJAUdSIsZ60FxcNqMbOeMJ8Ag8Aclx4lxpO7RYQ9vVvymgcsi8DokS21yPz3rlEyEu1twsKfOrfNmCkqLFm0Mg2MHXrqb91gkPAxOaBVLXNhCqtbS9+p7TIJNDd4twlsSgUPwGZQnG93+qF9//FV5J9Q1kvQpdQtyeoFzRjTeBT1n5sXPjylH6HPOKLGnmXUPwyDUoR6MPonrHJLd5wdJj/x6WRytOKgc2uAxpw1Afkf47RV+TGf3jdqkeb+UePF4Hy9nO9+Wq2o2Lxar2bLg7azZVNWsBECsuvV8S+u9ZMyO9kaCtf+ioh3VLz4YjcGliOqYcihpjRjcFxJ1wpTG5fkPIiiwglADAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Integration Yahoo Weather API">bee8873883c4221037bab6cfeeaad358</action_type>
+        <action_type_parent display_value="Integration Yahoo Weather API">e466833483c4221037bab6cfeeaad369</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>bee8873883c4221037bab6cfeeaad358</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>451c073c83c4221037bab6cfeeaad3c6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>82c73c55-3d8a-4c09-9365-5df17f8ebc77</ui_id>
+        <values>H4sIAAAAAAAA/41Sy27bMBD8F55lwXrYEXwLEgQo0DZA0+YSBMKSXNkEKErhw4kq+N+ztGTnhQI9zuzs7uyQDyNTkm1Yg1hVF0VVFaLM82xZXHDga0E0gCxWnCXMQIukFMoPhPagQ4Tj6AJvdPecxsLhQCWpXK9huP+3QuyUlhYN2zw8JqwHS6M9WrYZP5X+15sGjvrN3Eerfugjct4qs53x97nh7kR2VkYDWcLwxaORSJsb0A4T1oKR4Ds7sI23gQiLIG+NHs6KnTKehrGofXHqL62rlstlVDZIxwicqmdYzxlNdHMNHshJED7YWSp2nRLophgkNhC0v3rPTYLb3qvOTC0euD51dzq05ucUAzsPOD0JMcGRCezjpdH7fEhzt+uef51c3ihzDGUu6k6APiPwFB0PPvoZWVC/P6U8MV9yRo0tbaxb6Hti6t52e3XcQqbbdKsJpPG3kDuntiYFES9M6QUgvSH++kjfg1Xx3B80hprjuj9GPQX8Fn9MjjnwbCUXmSizRZlzWHAoiwXwciXW+TrLyoodEuYGd6XBubeg6IXqpxDPnGKbA6qnjGOLsKr3l2Rqj3MWh8dXilAVrkYDAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>15</order>
+        <parent_ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>4c2093708308221037bab6cfeeaad32d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>8c36d611-fa28-41e2-9192-57a0170bbc06</ui_id>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K1WeNqmNkqbfbxsVEhIDCSZeGFg39k1ryXWy2Cl0Vf77rvNRIkAMJl7Y+lDJ98vnnJzcXO89KbyFN0IRhPNwwqMwioZBMJyNwngSxeFQRIAYen1PwwapMkee5oLOW1CFC+z3pogTld75MRgsS0oJaTIFu6umgiJ8LZXIUXuL65u+l0FOwyzm3mL/KPVaNApiVFR60cJ5DM/uMncWKS82qC2TbfC06Vw2md7JkjLU5OCEQd/De4taIAFJQBnsexvQAmya77yFzQsK5AjiXKvdoWItta2JbuDeyF908yhwdQkSM96IcDiyRqA6nCzBwiVN5rbID3qlkqOpNRGYQKHsUTdWF5xnVqa6brEQq7Y7VcVGn9WKeIcBnedRGAKBmePpkNe0kst1enfRgjyWupKkoahSDupwAmtzGRfWwdl7qLDSeANZJvWKZXm6lVUzQdn4K0UH31mE7jRypX3gDrdPqoJ/TPFlFb6CXDoS32gMNZd9z+zMkQJjHqiQhuxn4ZDUxBoKrFKhkoBVTnDNPJeZ/UJXbbEBXvYbv8fjlxzG5w+G6sx88Pw9C8ezURQOmfO8qf6f+v5rHX2b91+BrPX+9+qJP4+0sf+T2Gm3t3dWJxrzj9/N/LOPZP6Gxod3/588Hwxf3KodJ1U2Nx2/K7DSFgJ/FEEQif1+NuTTiI/Hg0jMYDDiwXwwjybjwVgk4TSZYcynU79tKstblerVXwxou2iCxQ2pAs4kTGrGURlZmHpcIgY1bxS35EVcUR0JzIwF29wYPX07/wlOb9str3BAu1uOJSphnrFEu1gIO4mBrLbIo+XSJHtXTfLwdX23DRNOgur3gfbMf/CRrSnWMYf5eYe7zEt9dD916B7Z2eCJtp8SwSoWbMZY92XYwTpN2R2CXWPOIJN+58LPBN3AFsXhiZRlefMb95RhzfEKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>f2dea444-f049-4bd1-8293-e7e4b29e7cb7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>842093708308221037bab6cfeeaad33c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>3e876246-a6b4-4246-b6ae-7cb67282a436</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0XPwdhxEtK8bQ2BQddCO/LSdebaukkE8sckOU1m8t93ZcuJSbMuhTIIy0NA90M65+hc66ligrMJGyD3g+tglIRBGPZ9vz8eBPEojIM+DwExYD2WQYpUqTDJFaf1GmRpA1Wly3gh8xcvBo27HaW40IWE7dxVUCRZCckVZmzy9NxjBSjazKBik+oodS4aCTFKKn1o4RzDM9vCrnmelClmJhJt8NZ1Tl3m6suUMtRk4QR+j+HGYMaRgCxAauyxFDIOJldbNjGqpIBC4PeZ3O4rViIzDdEUNlr8opMHvq1bIDFLnAj7ZeQEasKLKRh4pJ0TU6q9XrlIUDeacFxAKc1NN9YU3BdG5FnTYiCWbXcuyzS7axRh+w0691FqAoGF5WmRN7QWj6v85aEFORNZLYmjKPME5H4FxigRl8bCqRhKrDVOoShEtowKla9F3UxQUm8paeFZi9CZWiwzDxKL2yNVwZtRfFqH56CEJfGVtqHmXY/prb6RoPWBCmkY/SwtkoaYoxDVKtQSRLUTbHOiRGE+0VFrdMB3Pef3ePiWw5Lrg6E6ex48v4mC4XgQBv3Iel7X/699/7mJvs/7ZyBrvf+tvvHTSJ39X8Vuu71Xd03CmX/4YeYfX5L5HY2Ld//fPO/33/yqdpxU21x3/E43jEsFFnakDRj8Xvp+yAc/uglUKldRilrD0hVUVc177ah5fyw/9Wz8m0PfN51naNhO50yg5PqEqO1oYkpsDUaNyEfj6ZJXc5fcv08fNqPByK9/FzSp/80z9fwbrFCwtZgJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>851c073c83c4221037bab6cfeeaad3c0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-02-28 20:01:24</sys_updated_on>
+        <ui_id>4fbe0e08-0223-473c-8e22-1ff059915531</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWviQBT9KzLPQRKjYn3bVoSFbgvt4ku3hJvMjQ5MPnZmYnXF/753kkkUW1wLfZHNQ2Dux8w5Z85NXnZMcDZlQ+R+cBOMkzAIw4HvDybDIB6HcTDgISAGzGM5ZEiVCpNCcVqvQVY2sNvpKk5l8daPQeN+TykudClhu3AVFElWQnKFOZu+vHqsBEWbGVRsujtJXYpGQoySSp9aOKfwzLa0a14kVYa5iUQbvHedM5fpfZ9RhposnMD3GG4M5hwJSApSo8cyyDmYQm3Z1KiKAgqBP+Zy21WsRG4aohlstPhDJw99W5ciMUucCN0ycgI14XQGBp5p58RUqtOrEAnqRhOOKVTS3B3HmoLH0ogib1oMxLLtLmSV5Q+NIqzb4Og+Kk0gsLQ8LfKGVvq8Kt6eWpBzkdeSOIqySEB2KzBGibgyFs6OocRa4wzKUuTLqFTFWtTNBCXrLyUt+tYidKYWy7wPicXdJ1WhP6f4rA4vQAlL4gdtQ817j+mtvpOg9YEKaRj9riyShpijENUq1BJEtRNsc6JEab7RUWt0wPee83s8Ouew5OZgqKM9D57fRMFoMgyDQWQ9r+v3e9/fNtHPef8CZK33f9Y3/jFSZ/93sfvj3t5Dk3DmH32Z+SfXZH5H4+rd/y/P+4OzX9UjJ9U210d+pxvGpQILO9IGDP6qfD/kwXvPn6n83BxcgLadg7lAyfUH8NshwIwgGowaOieD4JK9hUt2f4Ivm4Zg7NfPFc3Ef/NDeP0LqiDPOQIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN002093708308221037bab6cfeeaad32c,002093708308221037bab6cfeeaad33c,011c073c83c4221037bab6cfeeaad3c2,482093708308221037bab6cfeeaad329,811c073c83c4221037bab6cfeeaad3c3,842093708308221037bab6cfeeaad32a,882093708308221037bab6cfeeaad328,891c073c83c4221037bab6cfeeaad3c5,8d1c073c83c4221037bab6cfeeaad3be,c02093708308221037bab6cfeeaad33b,c42093708308221037bab6cfeeaad32d,c51c073c83c4221037bab6cfeeaad3c4"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">082093708308221037bab6cfeeaad32b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>002093708308221037bab6cfeeaad32c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:57</sys_updated_on>
+        <ui_id>0442897b-6b7f-465d-b7af-680c7878d53a</ui_id>
+        <values>H4sIAAAAAAAA/+1YS3PbOAz+KxqdHa+op+1bp2lneuh2p/Hk0uloKBKyOaUlLUUl9Xr835eUKFmxZefl9H1KBFDAB+IDBHhj55UsKlnO81dlyRaZPfv0eWSzTMvU/xs7wyuwZzatBJYsz2K5LsAe2TeYV1oOXwvOCJNxe0DpKCsLjtfX5sgbc8TqHSFLxqkA467AQnmRIOzZZk+l3cUcJ8CVpdfLnBHtnVH15E8jL5ggP/IcD3mOk4QIwtCPwiQNcTQJ1Ln2xUvj2Zo36I8EVf+ZKQTGTS6oxoQcZ6QClZBRUI5TzEsY2SucUSxzse4kAjD9kPGdYMkyqezZ+vDXkv2njPuOPpeCCpBAo+seY3NxjbhB0SShjWPoKk9lwgTgbEc7Gx+BK/UNDNkQRjdgA/Vt/AOCQCbxYtBK0WkH7LhblVUKKa64fH2+ENEZQnTPFKKnQ2zS96GoVTPb0/TCCTc5JzmvVtnfDQ3t7kKuT1VVc+Ty/uKqSoUKCk1XzT9DxvRqmd9+bLn2lmU1VqPkOcG8e8JSCpZUUqdmYwOHlTIUr3BRsGwRFyK/YfXLKozVeMHVwzjl+a1yqlvIGBMNZKyqA4/fKvllLb7GgukLeK/MqJe3NfHjfyvtt7kCgziuL0wfKIlghXxFdL4MOJ0iU729HEi2AhHXXStWbkE/97J12JOe3IIulfW/5o35ugslKaIhClESeaGrupDnk5BAOAVACE9dp9eFepSqAVs1YEsDtgziB4dmWlV9+bU8NooX6Fm1rcc0rY71jyL9z8JclfgybqhpYqudn4HRTa53yX8ZCr/LJCyaODSBJ47nec6UBF7UEZhSgDSNEuQCGiTwjqoDmA03WefnDyd/dk4OfAI3G+SHKcUouphEKLzwPepdTL3IuQjBd/2ETPDU98ftm9vtIYUd6wpIntHy6e14h6smM6TID8ixmTCBgZlwn8q9UO822cN54TvOhX/o/Bw6HwyBca7c6qz1CI5TWUPZI20rPscKQwn2kRMcoasb9ug6rycGsT/ZWj3gDw/xyKLj/TCLTnvJ+7kYWmgSSHPR/1Z2gm43OL1y3OMMPcqZ++zhv+Pd4MDfavfqWIrqRyzjFiFZx6cWsN4xQ80d6e6r+btL/JMbwDdeG1DqBvRo5Ufeico/XBceENN9+4L/C3zLnlkDw5+c0W9XGyVZAq34C1VCl5m2EtIkCNTQdqQSQvfuyKYSYMklWGnO1c3qpx7cY2GYexM914b2wRlp77l3aU9WWR/EUAlc7dS/w1j31PHts2ZiY6lsKEWBsFI5nGvZu/bXaq1YKxIw0hfd5uKLhrqTbf8H4Bwq9/cWAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">082093708308221037bab6cfeeaad33b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>002093708308221037bab6cfeeaad33c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:57</sys_updated_on>
+        <ui_id>f2dea444-f049-4bd1-8293-e7e4b29e7cb7</ui_id>
+        <values>H4sIAAAAAAAA/+2UW2vbQBCF/0rQsxC6RKbxW0gxBNoGmpCXNojR7sheutpV92LHNf7vndXFNo3TltDHvnnP7M6cM/rwLtLedd7ZB31trViqaP7lKY6EChr93kUKWozmEdOKCye0qnohjtYgfSjcKodLA6F0sQAhvQlVLmwnYfv420tsJSQ3OM7swFBnhyaa734puW2HlYQaJfW6d0aoJT0XnE5NCk12xTJW5LMiT9P83WVWz4o6y3kBCAXdmx7eTBEuPvRK/Gq2MI90O03ShgdbWRpH+OxQcaTRDUiLcdSC4uC02R4Ug8DvlDwKK6EctYvC5WcrflDvvCzDxQYpI8OheDhW4/YGma20YHjXBYOD4qCW4xumpW/VpyFH2Ds24KWb9k6Kt9QPu2A6uBgtNfcrvfk8DVwI1Qcci1IzkIcTOFpD7R3a8GFQYkuNqha6jpZTdUavRf+YvLTJUtIhaaTe0NDAUwIsGE9oR5AsSH/fy49gREjxkdrQ48FmDVawqmeP2jlDEfb9WqrvPhgaAo5RqmEbdMEyIzp3TXPWOLrexy/BPWF2t+sdrkcTiTjiWVnPGFq733/1aVrwvt1LoN/Q4V/QfgVlU2ZpeZ72y9k52s9w/jri+R8QDx/lLwlP0/Q/4qeIC1sNqI7ZBjDeSvhTwHmYYAduODJhychD0G6nf/BQ2BIAgp1KG22+hQhHbf8T7nxsSwsGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">091c073c83c4221037bab6cfeeaad3c1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>011c073c83c4221037bab6cfeeaad3c2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>d0e557b2-6410-4bf9-919b-05c09d21046c</ui_id>
+        <values>H4sIAAAAAAAA/+2UXWvbMBSG/0rQtTH+aMKau9JRKGwrrKU3WzHHkpyIyZInyUmzkP++cyy7DWtKy9jl7qL3fL3n+CF7ZvvQ9cHf2Qvv1cqw5beHhClDGv7eMwOtZEvGrREqKGuqQUjYBnRPgWsTYOWAQjPlZ8oAD2pDGUL5TsPu/s1EvlZaODnO7sDhhCAdW+7/CIVdJysNtdTY7zY4ZVZYrgS+mgya/JznvCwWZZFlxYezvF6UdV6IEiSUmDcVXk6rzD4NSvLqjjQPdT9Nsk6QrTxLmHwM0giJoxvQXiasBSMgWLd7UpwEcWP0s7BWJmA7RsmPXv3C3sV8TomNxB25jMGnZzVeMMp8bRWXNx0ZjEqAWo813Oq+NV/iHnR72UCvw3R7VHqP/WRHpsnFaKm5Xdvt12nglTLDgmNQWw766QUBz1D3QXr6MFLLFhtVLXQdHqfqnN2ooRi9tOlK4yNttN3iUOIqpa9tTYo3gvQK9Y+DfA9O0RafsQ0WR5s1eMWrgUFsFxyucBjOUv3syVBccFylitfABM+d6sJFpCq6PiQvAT5id78fHG5GE2kk8nD43mdZKYYOLzl+X9G/YPoc5s08z+anmT5bnGL6BM2vg1y8ATKd/p0cZ1n2H+RjkJWvIpDjbhGMv+X4gaCNE3zkRkiuPBq5I+16+r+mwA4BUPxY2lr3g1Z41g6/AZ8V1eX5BQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">402093708308221037bab6cfeeaad329</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned>current_try,integration_success,integration_error_message</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>71ee3976-074a-447f-91db-af03d341b41e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>482093708308221037bab6cfeeaad329</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>7aa34ecf-3d9b-45ba-ac4d-0560caf284ad</ui_id>
+        <values>H4sIAAAAAAAA/+2YWW+bQBDHv4rFa42LOQykT1HTSJGaRmrcvFQRGnYHZ1UMZFly1PJ37yyXnctqrSRSJd7YYZnjP/vzjrwy8koVlSrn+WFZikVmHPy8HBsi0zZ6XhkZLNE4MFglJWYqUvLeGBs3kFbaSo9clEUK9xcbC7sSKafNjasCJHlQKI2D1aNX6r7AKIUYU/rwJFO4oF0UnNPSYVNm+Q4LHOba9tRy/BjiGUsQAbgTIu3rvvzcpDaa16k9m6+OREbRx8gl1xlZYwPvFGYcKWYCaYljYwkZB5XTd51FIvCzLN0YrshRU+sS7krxm3y7lt6XIAVlrQ79Mmo16uTJBcOzQok8aywK4rTTLk+rZfatqUGriwlUqdpStyrJHxY6Z51Em1FyfpXffu8CHousLq99meYM0n4FSkkRVwpL3ZFKzB9r05i+PukLprjUki6hKES2iAqZ34g6DqW9nCxSWkySNL+l/PRRmgDTNU5ITZgck/2oNl+AFLrgU3LTxvuRiesKT3Tf/cS3pxC4JmcJN10PYjMELzCDhDs89j3LtlxjXYsbXVe6rEamVpCo0ZQ2lEyKQh1SCjdUnpIVdrb6IG4dD1ru2kyhVCWzUcKjupK6whuQky0fow+j6SdjvV6Pe2BqPSVoBaKyYgzLcgsc6yk51t7ozCnfj8e6ux09yU564tkWPSebPEfnfZ47i2hpivM8RcjegibH3pMm559wSlrNWvPR04a8FW0b7R7S9qCV7wIcuJyHzHZM+sW1TTfBkFhj3HQCP0AHAju0YA/g6vJfwAGlzGW0pMMEC9yCYrUKbEan1vNMhwdguswKzdCZeabHk6mfBBgz359EUVNnVCpQVRlFk9bVev2UqlfxuR+W59T5bNFfaNZOJN0XkPyitRqd9lr9hZwtnmUX/tXpDCzrf7/tenEe4te37F3Qs/2ZR7dcYDqOn5iuZTlmECIzQxs9zwttPgv3uesa9C41V030ZpCrT+FLA9Iw0A0D3TDQPT/QPQJnGOyGwW4Y7HZiMQx4w4A3DHhvP+BxZKKkrOY6hZPuPzv94p6OkWDbpttc/tL1bGzrPwbWrAH9EwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">891c073c83c4221037bab6cfeeaad3c2</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0e557b2-6410-4bf9-919b-05c09d21046c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>811c073c83c4221037bab6cfeeaad3c3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>3a91813c-e115-4e70-a2e6-441d33097540</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">8c2093708308221037bab6cfeeaad329</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>71ee3976-074a-447f-91db-af03d341b41e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>842093708308221037bab6cfeeaad32a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:57</sys_updated_on>
+        <ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</ui_id>
+        <values>H4sIAAAAAAAA/+1U22rbQBD9laJnIXSJTeO3kBIotA00IS9tEKPdkb10tavuxY5q9O+d1cU2iUNLyWNfhPbsXM45mtE+0t613tl7fWWtWKto9e0xjoQKGL3vIwUNRquIacWFE1qVAxBHW5A+XNArF7aV0D0cEbYRkhucqrVgKMehiVb7Z1eua7GUUKGkxDtnhFpTuuB0qlOos0uWsSJfFnma5u8vsmpZVFnOC0AoKG5OvJ7Jvfs0IPGrrEM/wu3cSRseaGVpHOGTQ8WRWtcgLcZRA4qD06Y7IAaB3yp5BDZCuVFxA09W/KLa+WIRAmskjWyy43AsJ6tml7RgeNsGgiPioJKzhVr6Rn0ZdQSTsQYv3YnJ3lI9bAPpwGKiVN9t9O7r3PBGqEHgdCk1A3k4gSMbKu/Qhg+DEhsqVDbQtmRO2Rq9FUMycWmStaRDUku9o6ZhUhJggXhCHkFyQ/iHAX4AI4KKz1SGkkeaFVjBymGqqJwzJKEfbCl/+kBoFDhJKUc3KMAyI1p3RX22OLHu45cjeTKN+/3AcDuRSJg3JpR0puv77z5NCzY8+fNAgxRSMu2V6/uXM/1mdd9iMy5hUS+ydHF+My6W5zbjzE68vg75H9YhfMC/3IY0Tf+vw+k6CFuOYz1pG5r/8zY8htEfO9hxbjgyYYnIfcA+zv/xcNHRAAh2Cu20+REkHLH+N/bJEpsRBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">802093708308221037bab6cfeeaad328</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>882093708308221037bab6cfeeaad328</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>71ee3976-074a-447f-91db-af03d341b41e</ui_id>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8lVRnWaAky69b0MJAgLYBmiCXJiBWJGUTpUmVpOy4hv+9Sz2coHHaosixN3P2NbPa8SEyja8b727NpXNypaPF14c4kjpg+PsQadiIaBExo7n00mjaAnG0BdWEwJX2YmUhhC6WIFVjQ5RLVyvY3/02ia2l4lb0M2uw2NkLGy0Ov4T8vhZUQSkU9rrxVuoVlkuOr4pAlc5ZyvJskmeEZLNxWk7yMs14DgJyzBsK3w8SLj62SPyqtjAPcTdMMpYHWimJI/HoheYCR1egnIijDWgO3tj9CbEC+LVWT8Baao/topD86OQP7J0VRUisBGpkoguenrTfXgeztZFMXNeBYId4KFVfw4xqNvpzpyPsXVTQKD/sHZHGYT9RB9KBRU+pulmb3Zdh4FLqVmAfVIaBOr3A4xrKxgsXPoxQYoON6AbqGpdDa2u2si1GLptkpfCRVMrscGi4pwRYIJ7gjiBZIv6hhe/AyqDiE7bB4o5mCU4y2t4etvMWJRzbtdDvTSDUCeyl0G4bmOCYlbW/xDlb0bM+xi8P99nNHg6zjE1zVhSjnM9gNGZkPprnk2JU8CqdVjNRsuk0obQjT50H3zhKE2a4OB7f3TeE5Jy8vPO3a/wW3phDURUpKc57Yzw5540zrnjdENkfDBE+4V/6gRDy3xDPDSEd7Q6719YO/2c/PITj7ya47m64YNIhkduAXQ3/9yGwxwOQ7Dm0M/ZbkPCEHX8CwlklazkGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">811c073c83c4221037bab6cfeeaad3c5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned>integration_success</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>891c073c83c4221037bab6cfeeaad3c5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>552010e3-64a3-4487-95ef-b80bc886603e</ui_id>
+        <values>H4sIAAAAAAAA/+1V224aMRD9lcrPQIFF4fIWKUJCahupoXmpotWsPQtWvfbGFwhF/HtndhdIo6r9gOZtfeZ2zvFYexQuxTrFsHa3IeiNFYvvTz2hLWP0fRQWKhQLQiJuPETtbB6SlBiC6IkdmMTREX0rHWoDh8dXkNxqozx2TWvw1CuiF4vjm1A81JgbKNBQ5don/LgEE5BaaEVIKUdyOM3kLJOT8Xg0zKYFFDeyRARQWXFDeefi1ZXnh4cLz7+K4OEULJwzCJYA5xWTHPYEvkS0ColDyXx6ogKrIDp/uCAeQd1bcwW2NIXaCU5+Cfon9c7GnFci6ZXYxi7HvPOtheXWaYn3NVMkJGN6UJiuSDqTKvulFcOWYwnJxLPlZedZB9/9fiFDiqRA87BmTUyyY1w+bN3+65nQUttGfhc0ToK5nCBGr4sUMfAlJr1+610LffrTVaLBisbmFdS1tpu89m6nm1EkrBpsDB0GpXF7osirOADJNgzIcBgsCb9r4Efwmi35TG2omEd+s/o54YpXBSZKzeU462dyNO5PSpz3Z6VU/Ww2nWEGs/F8COLU+J8/J1bWGtl5kje2c0KQXtfxlijssJN/euKNb6e3j6PZzn/t1/sjeX8k/9cjUSh1IFZrprA6/0s4cKAl0/I1tHf+B+u5Yqdf6bzmy5UGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">411c073c83c4221037bab6cfeeaad3be</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned>active,retry_count,retry_timeout,integration_success,current_try</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>8d1c073c83c4221037bab6cfeeaad3be</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>eea8c487-ce6f-472c-a1b9-615fd8364ef3</ui_id>
+        <values>H4sIAAAAAAAA/+2a32/bNhDH/xVDTytgeZKon9lT0SJAgG0dWq8vayGcyJNDTJZUikriBv7fd5RlW3U8A8vsAin0Ykgnive9431M+uBHq2p13epmXr1uGrkorau/Pk8tWRobXT9aJSzRurKAa3mH1tS6g6I1BoeuhWzqAlYfByZ+KwuhsJ+nBkWva1TW1ePBI72qMS0gw4LenKsWf76GojEepCBL5LjciRiPGfc9z3VYlEEW8hwRQLAkoXHbl19vpR1KNS7oPquqAqEkQ6WEkeJMLXzQWAokT7nxOrWWUArQlVrtLApBvCuLveFWlpqms8zgh0Z+pbmZZ8blSFFx3Dzb3aZ9djZmfltJju9qLStKgMWMPMiK/iVeFe2y/H2j3yQWc2gLvU1s3memN799mva2IX9Ym5iMyF5x/uG2un+/FXQtyy78/mFRcSh2d6C1klmrsTFL1cr5Ye42pl+PLRgWuCS36RLqWpaLtFbVnexcUWDL2aKgm1leVPck0dTYzKxQVc4o4TC7JvvbzvwRlDQp+Y2moZeNyz9L+aXFG1MQQQgO8MSxWewy2w+Q2RmGgY0CYuBOkkS+sNZd/tMvrYlsk8g+J2mXdjOg4UrWui+aK02BbG0m8r546OrUOPKiW1VOFs1sgfoPVZFgvfrpk/WQukHsM9dLM2iwmVHJ4EKBCTfdTP3Jmk66nL/6xVqv19MdYTSlWqW8amkB95g9pezZkN0YLV1iO8Ly+BRh4A4Ie2+kTd700o7q7VmTOx9nZ813nsnaf0Ltgiztc/MtS/t1+S4g5U7oBEGGtoi5sH0euzaAK+wgDDzII8aCKDwDSMPyuARNg/kNUuw4TloukXa47wLU6S0rewrUfCfuXzSPUL0UqKIcsiDKuB3lwrN93yOozEeYuxELEZOQB2eDalsgl8Oq99CB5TiHaA3HNy3n2DQDwNynhLlnPBjm/CRl4YCym73OyYedzpNBjEfGH+jICL4QCfeYzbhLUOaY2HFOex6LoxgZxF7iwDOg7MIf4MBbpcxwAudSGBzsNOwkAwkOGHizETeZd+KOKh53mZezy0SeC7FvC57T0S2AzE4giKmqBRNZFDie4z+7oD+b2t143/zy70rtyM/qsQMwfp2PHYBzdgAOSBs7AeN2MnYC/n8n4ChWY0dghGvsCJyrI3CA2NgZGI+SL+EoeenOwAEWY4dg3HV+jA6BQC4bUjU3Em62/xIwD1ZUOZIPTfeV+tvEs7et/wEO6PuWbyAAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c82093708308221037bab6cfeeaad33a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>c02093708308221037bab6cfeeaad33b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:57</sys_updated_on>
+        <ui_id>61ffdb3e-1de8-4c26-a984-732b0be29ee1</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cc2093708308221037bab6cfeeaad32c</block>
+        <comment/>
+        <connected_to>71ee3976-074a-447f-91db-af03d341b41e</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>c42093708308221037bab6cfeeaad32d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:57</sys_updated_on>
+        <ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cd1c073c83c4221037bab6cfeeaad3c3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Do the following until">eaeb040687210300e6c2c88fc0e3ec89</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>c51c073c83c4221037bab6cfeeaad3c4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:56</sys_updated_on>
+        <ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</ui_id>
+        <values>H4sIAAAAAAAA/+1VTWvbQBD9K0VnIWSrjoNvoSVQaBPahFzaVKx2R/bS1a66H3ZUof/eGX3YxolpKYVe6pP2zc7Me7PzcBuZ4Ovg3b25ck6udbT6/BhHUhOG322kWQXRKuJGC+ml0XkPxNGWqUAB/BTS1Yo1DweEb6QSFsZqNbOY48FGq/Yk5JsacsUKUJh4563Ua0yXAk+FYHNepK+XWZrNsjS9mM35fJmV+Ltgy0WK96bENxO5V+97JD7Lmvoh7qZOxgqiNUvTOIInD1oA9i6ZchBHFdOCeWObPWKBiVutDsBGaj9IrtiTkz+w+HyxoIsloEg+zmN/zMdZTWMyksNtTQwHxLNCTTM0KlT6ZhBCU4aSBeWPphwc1oOaSBOLkVJ5tzG7T1PDa6l7hWNQGc7U/sQ8zqEIHhy9DCiosFBesbrG6eS1NVvZJyOXKlkrPCSlMjtsSquSME7EE5wRS64Rf9vDD8xKUvEBy2By16vPvwfqO+gYGeeDaLzguJW1v8JyWxjJdfHz1TvaurbtiWzHXgk+A6wt65/aBc7Bua77EtI0E94G+Hrz8TSDB2uJhLfNeBNOr1jAYM5N0L7rnu/5P+HwN5wllrPssjznrEv+krNe8NR5O81/ZSeax2+6KaVa/+002Qmf0OWDX0ZtffM/ttkjeWro4IbFEcClQyL3hL2b/ggo0OAGSH4M7Yz9RhIOWPcTziUKqFIGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN301c073c83c4221037bab6cfeeaad3b4,3c1c073c83c4221037bab6cfeeaad39e,701c073c83c4221037bab6cfeeaad399,701c073c83c4221037bab6cfeeaad3b1,f81c073c83c4221037bab6cfeeaad3a1,fc1c073c83c4221037bab6cfeeaad3b6"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2765cfd8-337f-4003-89ec-92e55592d694</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>integration_error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Integration Error Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>301c073c83c4221037bab6cfeeaad3b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=7f721a84-dcfd-45ab-9a58-8fd3db750204</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current_try</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Current Try</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>3c1c073c83c4221037bab6cfeeaad39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=56a0ac90-3813-45e3-be65-eda8ac09974d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>active</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Active</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>701c073c83c4221037bab6cfeeaad399</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=7fab57bc-7fd2-4421-a421-6f1736ee96c5</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>retry_timeout</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Retry Timeout</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>701c073c83c4221037bab6cfeeaad3b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=f06055be-d8cd-4c81-aa1d-5652af733576</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>retry_count</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Retry Count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>f81c073c83c4221037bab6cfeeaad3a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a4dd9c23-3c12-4fe9-8fcd-3878e3a8290a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>integration_success</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Integration Success</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</model>
+        <model_id>ce890bf483c4221037bab6cfeeaad330</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce890bf483c4221037bab6cfeeaad330</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>fc1c073c83c4221037bab6cfeeaad3b6</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN381c8ff883c4221037bab6cfeeaad35e,f41c8ff883c4221037bab6cfeeaad35a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>base</element>
+        <help/>
+        <hint/>
+        <label>Base</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>381c8ff883c4221037bab6cfeeaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>city</element>
+        <help/>
+        <hint/>
+        <label>city</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:37:03</sys_created_on>
+        <sys_id>f41c8ff883c4221037bab6cfeeaad35a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:37:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN3f1093708308221037bab6cfeeaad30b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>output</element>
+        <help/>
+        <hint/>
+        <label>Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_ce890bf483c4221037bab6cfeeaad330</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:44</sys_created_on>
+        <sys_id>3f1093708308221037bab6cfeeaad30b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:44</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>weather_integration_subflow</internal_name>
+        <label_cache>[{"name":"flow_variable.integration_error_message","label":"Flow Variables➛Integration Error Message","type":"string","base_type":"string","usedInstances":{"3e876246-a6b4-4246-b6ae-7cb67282a436":["integration_error_message"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"2765cfd8-337f-4003-89ec-92e55592d694"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.temperature","label":"8 - Integration Yahoo Weather API➛temperature","reference_display":"temperature","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["temperature_in_celsius"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"dfe53698-0f95-4b36-87aa-224c7a0883b7"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.longitude","label":"8 - Integration Yahoo Weather API➛longitude","reference_display":"longitude","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["longitude"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"96b0a866-3a12-42de-873b-54a86626e110"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.latitude","label":"8 - Integration Yahoo Weather API➛latitude","reference_display":"latitude","type":"string","base_type":"string","usedInstances":{"8c36d611-fa28-41e2-9192-57a0170bbc06":["latitude"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"60b461e3-b22d-421d-9101-a9c4bf636ff6"}},{"name":"146fda17-8716-43d3-9370-6e424bc8a944.duration","label":"12 - Convert Seconds into Duration➛Duration","reference_display":"Duration","type":"glide_duration","base_type":"glide_duration","usedInstances":{"0442897b-6b7f-465d-b7af-680c7878d53a":["timer_duration"]},"attributes":{"uiTypeLabel":"Duration","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"glide_duration","uiUniqueId":"6298db06-2d6c-49c6-bdc5-4524f940dec3"}},{"name":"flow_variable.retry_timeout","label":"Flow Variables➛Retry Timeout","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"146fda17-8716-43d3-9370-6e424bc8a944":["seconds"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7fab57bc-7fd2-4421-a421-6f1736ee96c5"}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.__action_status__.message","label":"8 - Integration Yahoo Weather API➛Action Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"7aa34ecf-3d9b-45ba-ac4d-0560caf284ad":["integration_error_message-2"]},"attributes":{}},{"name":"82c73c55-3d8a-4c09-9365-5df17f8ebc77.__action_status__.code","label":"8 - Integration Yahoo Weather API➛Action Status➛Code","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"71ee3976-074a-447f-91db-af03d341b41e":["condition"]},"attributes":{}},{"name":"subflow.base","label":"Input➛Base","reference":"x_1584312_bases_base","reference_display":"Base","type":"reference","base_type":"reference","column_name":"","usedInstances":{"4fbe0e08-0223-473c-8e22-1ff059915531":["record"],"f4683f0d-fb1e-43ee-aba3-eafe550f116f":["record"],"8c36d611-fa28-41e2-9192-57a0170bbc06":["record"],"3e876246-a6b4-4246-b6ae-7cb67282a436":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d5d24f78-c5f5-45ef-9df1-591e1115c5f7","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.active","label":"Flow Variables➛Active","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"d0e557b2-6410-4bf9-919b-05c09d21046c":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"56a0ac90-3813-45e3-be65-eda8ac09974d"}},{"name":"flow_variable.integration_success","label":"Flow Variables➛Integration Success","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"f2dea444-f049-4bd1-8293-e7e4b29e7cb7":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"a4dd9c23-3c12-4fe9-8fcd-3878e3a8290a"}},{"name":"flow_variable.current_try","label":"Flow Variables➛Current Try","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"3bc93df3-1a36-4016-ae9c-5e316d34bcaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7f721a84-dcfd-45ab-9a58-8fd3db750204"}},{"name":"flow_variable.retry_count","label":"Flow Variables➛Retry Count","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"a15b7cca-678c-46d0-b2b5-82f10ce4d25c":["condition"],"3bc93df3-1a36-4016-ae9c-5e316d34bcaf":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f06055be-d8cd-4c81-aa1d-5652af733576"}},{"name":"subflow.city","label":"Input➛city","type":"string","base_type":"string","usedInstances":{"82c73c55-3d8a-4c09-9365-5df17f8ebc77":["city"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"ac6dd96c-34db-42c4-80fb-73599d7f077c"}}]</label_cache>
+        <master>true</master>
+        <name>Weather Integration Subflow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1f20d3708308221037bab6cfeeaad3de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_variable_value action="delete_multiple" query="document_key=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_1f20d3708308221037bab6cfeeaad3de^id=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN5320d3708308221037bab6cfeeaad3e0"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>1f20d3708308221037bab6cfeeaad3de</id>
+        <name>Weather Integration Subflow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>5320d3708308221037bab6cfeeaad3e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=5320d3708308221037bab6cfeeaad3e0"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN172017708308221037bab6cfeeaad315,9b2017708308221037bab6cfeeaad306"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=d5d24f78-c5f5-45ef-9df1-591e1115c5f7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1584312_bases_base</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>base</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Base</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1584312_bases_base">x_1584312_bases_base</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>172017708308221037bab6cfeeaad315</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=172017708308221037bab6cfeeaad315"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ac6dd96c-34db-42c4-80fb-73599d7f077c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>city</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>city</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>9b2017708308221037bab6cfeeaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9b2017708308221037bab6cfeeaad306"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN5b2017708308221037bab6cfeeaad320"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=172de136-aaa4-4c96-bcce-f2e4d3d32e01</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>5b2017708308221037bab6cfeeaad320</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5b2017708308221037bab6cfeeaad320"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN632017708308221037bab6cfeeaad38a,6b2017708308221037bab6cfeeaad389,af2017708308221037bab6cfeeaad38a,e32017708308221037bab6cfeeaad38c,eb2017708308221037bab6cfeeaad38b,eb2017708308221037bab6cfeeaad38c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>632017708308221037bab6cfeeaad38a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>f4683f0d-fb1e-43ee-aba3-eafe550f116f</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWviQBT9KzLPIvlQsb5tK8JCt4V28aVbwk3mRgcmHzszsbrif987ySSKLa6FvsjmITD3Y+acM+cmLzsmOJuyIXLPv/HHSeiHYeB5wWTox+Mw9gMeAqLP+iyHDKlSYVIoTus1yMoGdjtdxaks3gYxaNzvKcWFLiVsF66CIslKSK4wZ9OX1z4rQdFmBhWb7k5Sl6KREKOk0qcWzik8sy3tmhdJlWFuItEG713nzGV632eUoSYLx/f6DDcGc44EJAWpsc8yyDmYQm3Z1KiKAgqBP+Zy21WsRG4aohlstPhDJw89W5ciMUucCN0ycgI14XQGBp5p58RUqtOrEAnqRhOOKVTS3B3HmoLH0ogib1oMxLLtLmSV5Q+NIqzb4Og+Kk0gsLQ8LfKGVvq8Kt6eWpBzkdeSOIqySEB2KzBGibgyFs6OocRa4wzKUuTLqFTFWtTNBCUbLCUtBtYidKYWy3wAicU9IFVhMKf4rA4vQAlL4gdtQ837PtNbfSdB6wMV0jD6XVkkDTFHIapVqCWIaifY5kSJ0nyjo9bogO/7zu/x6JzDkpuDoY72PHh+E/mjyTD0g8h6Xtfv976/baKf8/4FyFrv/6xv/GOkzv7vYvfHvb2HJuHMP/oy80+uyfyOxtW7/1+e94KzX9UjJ9U210d+pxvGpQILO9IGDP6qPC/kwXvPn6n83BxcgLadg7lAyfUH8NshwIwgGowaOieD4JK9hUt2f4IvmwZ/7NXPFc3Ef/NDeP0Lhw/t1AIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>6b2017708308221037bab6cfeeaad389</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>4fbe0e08-0223-473c-8e22-1ff059915531</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWviQBT9KzLPQRKjYn3bVoSFbgvt4ku3hJvMjQ5MPnZmYnXF/753kkkUW1wLfZHNQ2Dux8w5Z85NXnZMcDZlQ+R+cBOMkzAIw4HvDybDIB6HcTDgISAGzGM5ZEiVCpNCcVqvQVY2sNvpKk5l8daPQeN+TykudClhu3AVFElWQnKFOZu+vHqsBEWbGVRsujtJXYpGQoySSp9aOKfwzLa0a14kVYa5iUQbvHedM5fpfZ9RhposnMD3GG4M5hwJSApSo8cyyDmYQm3Z1KiKAgqBP+Zy21WsRG4aohlstPhDJw99W5ciMUucCN0ycgI14XQGBp5p58RUqtOrEAnqRhOOKVTS3B3HmoLH0ogib1oMxLLtLmSV5Q+NIqzb4Og+Kk0gsLQ8LfKGVvq8Kt6eWpBzkdeSOIqySEB2KzBGibgyFs6OocRa4wzKUuTLqFTFWtTNBCXrLyUt+tYidKYWy7wPicXdJ1WhP6f4rA4vQAlL4gdtQ817j+mtvpOg9YEKaRj9riyShpijENUq1BJEtRNsc6JEab7RUWt0wPee83s8Ouew5OZgqKM9D57fRMFoMgyDQWQ9r+v3e9/fNtHPef8CZK33f9Y3/jFSZ/93sfvj3t5Dk3DmH32Z+SfXZH5H4+rd/y/P+4OzX9UjJ9U210d+pxvGpQILO9IGDP6qfD/kwXvPn6n83BxcgLadg7lAyfUH8NshwIwgGowaOieD4JK9hUt2f4Ivm4Zg7NfPFc3Ef/NDeP0LqiDPOQIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Integration Yahoo Weather API">bee8873883c4221037bab6cfeeaad358</action_type>
+        <action_type_parent display_value="Integration Yahoo Weather API">e466833483c4221037bab6cfeeaad369</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>bee8873883c4221037bab6cfeeaad358</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>af2017708308221037bab6cfeeaad38a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>82c73c55-3d8a-4c09-9365-5df17f8ebc77</ui_id>
+        <values>H4sIAAAAAAAA/41Sy27bMBD8F55lwXrYEXwLEgQo0DZA0+YSBMKSXNkEKErhw4kq+N+ztGTnhQI9zuzs7uyQDyNTkm1Yg1hVF0VVFaLM82xZXHDga0E0gCxWnCXMQIukFMoPhPagQ4Tj6AJvdPecxsLhQCWpXK9huP+3QuyUlhYN2zw8JqwHS6M9WrYZP5X+15sGjvrN3Eerfugjct4qs53x97nh7kR2VkYDWcLwxaORSJsb0A4T1oKR4Ds7sI23gQiLIG+NHs6KnTKehrGofXHqL62rlstlVDZIxwicqmdYzxlNdHMNHshJED7YWSp2nRLophgkNhC0v3rPTYLb3qvOTC0euD51dzq05ucUAzsPOD0JMcGRCezjpdH7fEhzt+uef51c3ihzDGUu6k6APiPwFB0PPvoZWVC/P6U8MV9yRo0tbaxb6Hti6t52e3XcQqbbdKsJpPG3kDuntiYFES9M6QUgvSH++kjfg1Xx3B80hprjuj9GPQX8Fn9MjjnwbCUXmSizRZlzWHAoiwXwciXW+TrLyoodEuYGd6XBubeg6IXqpxDPnGKbA6qnjGOLsKr3l2Rqj3MWh8dXilAVrkYDAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>15</order>
+        <parent_ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>e32017708308221037bab6cfeeaad38c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>8c36d611-fa28-41e2-9192-57a0170bbc06</ui_id>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K1WeNqmNkqbfbxsVEhIDCSZeGFg39k1ryXWy2Cl0Vf77rvNRIkAMJl7Y+lDJ98vnnJzcXO89KbyFN0IRhPNwwqMwioZBMJyNwngSxeFQRIAYen1PwwapMkee5oLOW1CFC+z3pogTld75MRgsS0oJaTIFu6umgiJ8LZXIUXuL65u+l0FOwyzm3mL/KPVaNApiVFR60cJ5DM/uMncWKS82qC2TbfC06Vw2md7JkjLU5OCEQd/De4taIAFJQBnsexvQAmya77yFzQsK5AjiXKvdoWItta2JbuDeyF908yhwdQkSM96IcDiyRqA6nCzBwiVN5rbID3qlkqOpNRGYQKHsUTdWF5xnVqa6brEQq7Y7VcVGn9WKeIcBnedRGAKBmePpkNe0kst1enfRgjyWupKkoahSDupwAmtzGRfWwdl7qLDSeANZJvWKZXm6lVUzQdn4K0UH31mE7jRypX3gDrdPqoJ/TPFlFb6CXDoS32gMNZd9z+zMkQJjHqiQhuxn4ZDUxBoKrFKhkoBVTnDNPJeZ/UJXbbEBXvYbv8fjlxzG5w+G6sx88Pw9C8ezURQOmfO8qf6f+v5rHX2b91+BrPX+9+qJP4+0sf+T2Gm3t3dWJxrzj9/N/LOPZP6Gxod3/588Hwxf3KodJ1U2Nx2/K7DSFgJ/FEEQif1+NuTTiI/Hg0jMYDDiwXwwjybjwVgk4TSZYcynU79tKstblerVXwxou2iCxQ2pAs4kTGrGURlZmHpcIgY1bxS35EVcUR0JzIwF29wYPX07/wlOb9str3BAu1uOJSphnrFEu1gIO4mBrLbIo+XSJHtXTfLwdX23DRNOgur3gfbMf/CRrSnWMYf5eYe7zEt9dD916B7Z2eCJtp8SwSoWbMZY92XYwTpN2R2CXWPOIJN+58LPBN3AFsXhiZRlefMb95RhzfEKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Convert Seconds into Duration">230527a4831b121037bab6cfeeaad37e</action_type>
+        <action_type_parent display_value="Convert Seconds into Duration">5a842f60831b121037bab6cfeeaad34c</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>230527a4831b121037bab6cfeeaad37e</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>eb2017708308221037bab6cfeeaad38b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>146fda17-8716-43d3-9370-6e424bc8a944</ui_id>
+        <values>H4sIAAAAAAAA/41Sy27bMBD8F55lQfJT9q1IECBA2wB1m0sQCCtxZROgSIUPJ6rhf+/SZNUgufTI4ezuzOw+nZngbMfWi2I138CyWpRNOS+LxaaBZt12iAB8UZUsYwp6JKbFVituCTiB9AE5nzupX+sTGAGNxNygM2PtRI/au8uFmFzYQcL4mAoIaY9CcoOK7Z6eMzaAoeYODdudP3z9rzoJDUqi7id5n/S6cQiAUA4PNCoCX1Pd/YRqw4OQMmP45lBxJAUdSIsZ60FxcNqMbOeMJ8Ag8Aclx4lxpO7RYQ9vVvymgcsi8DokS21yPz3rlEyEu1twsKfOrfNmCkqLFm0Mg2MHXrqb91gkPAxOaBVLXNhCqtbS9+p7TIJNDd4twlsSgUPwGZQnG93+qF9//FV5J9Q1kvQpdQtyeoFzRjTeBT1n5sXPjylH6HPOKLGnmXUPwyDUoR6MPonrHJLd5wdJj/x6WRytOKgc2uAxpw1Afkf47RV+TGf3jdqkeb+UePF4Hy9nO9+Wq2o2Lxar2bLg7azZVNWsBECsuvV8S+u9ZMyO9kaCtf+ioh3VLz4YjcGliOqYcihpjRjcFxJ1wpTG5fkPIiiwglADAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>f2dea444-f049-4bd1-8293-e7e4b29e7cb7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>eb2017708308221037bab6cfeeaad38c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>3e876246-a6b4-4246-b6ae-7cb67282a436</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0XPwdhxEtK8bQ2BQddCO/LSdebaukkE8sckOU1m8t93ZcuJSbMuhTIIy0NA90M65+hc66ligrMJGyD3g+tglIRBGPZ9vz8eBPEojIM+DwExYD2WQYpUqTDJFaf1GmRpA1Wly3gh8xcvBo27HaW40IWE7dxVUCRZCckVZmzy9NxjBSjazKBik+oodS4aCTFKKn1o4RzDM9vCrnmelClmJhJt8NZ1Tl3m6suUMtRk4QR+j+HGYMaRgCxAauyxFDIOJldbNjGqpIBC4PeZ3O4rViIzDdEUNlr8opMHvq1bIDFLnAj7ZeQEasKLKRh4pJ0TU6q9XrlIUDeacFxAKc1NN9YU3BdG5FnTYiCWbXcuyzS7axRh+w0691FqAoGF5WmRN7QWj6v85aEFORNZLYmjKPME5H4FxigRl8bCqRhKrDVOoShEtowKla9F3UxQUm8paeFZi9CZWiwzDxKL2yNVwZtRfFqH56CEJfGVtqHmXY/prb6RoPWBCmkY/SwtkoaYoxDVKtQSRLUTbHOiRGE+0VFrdMB3Pef3ePiWw5Lrg6E6ex48v4mC4XgQBv3Iel7X/699/7mJvs/7ZyBrvf+tvvHTSJ39X8Vuu71Xd03CmX/4YeYfX5L5HY2Ld//fPO/33/yqdpxU21x3/E43jEsFFnakDRj8Xvp+yAc/uglUKldRilrD0hVUVc177ah5fyw/9Wz8m0PfN51naNhO50yg5PqEqO1oYkpsDUaNyEfj6ZJXc5fcv08fNqPByK9/FzSp/80z9fwbrFCwtZgJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN232017708308221037bab6cfeeaad387,272017708308221037bab6cfeeaad372,2b2017708308221037bab6cfeeaad385,2f2017708308221037bab6cfeeaad383,2f2017708308221037bab6cfeeaad388,632017708308221037bab6cfeeaad371,672017708308221037bab6cfeeaad374,6b2017708308221037bab6cfeeaad375,ab2017708308221037bab6cfeeaad384,af2017708308221037bab6cfeeaad387,e72017708308221037bab6cfeeaad373,e72017708308221037bab6cfeeaad376"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cc2093708308221037bab6cfeeaad32c</block>
+        <comment/>
+        <connected_to>71ee3976-074a-447f-91db-af03d341b41e</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>232017708308221037bab6cfeeaad387</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">091c073c83c4221037bab6cfeeaad3c1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>272017708308221037bab6cfeeaad372</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>d0e557b2-6410-4bf9-919b-05c09d21046c</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxvijCWveSkqh0K2wlr5sxVzLciImS54+kmYm/31Xlp2ENqMt62PfonO/zrm+h3REOds6a+7VhTF8Kcn8x2NEuPQY/u6IhIaROaFKVtxyJYseiMgahPOBa2lhqcGHJtxMuARq+dpnVNy0ArYPrybSFReVZsPsFjROsEyTefcsxCvsUydQp+c0pXk2y7Mkyb6cpeUsL9OsyoFBjg0FlExg6mIkPbnpkeifauy29bixmsvl8L4ZutyNoNKVZ5UmEWFPlsmKIZ8ahGERaUBWYJXe7hHNoLqV4gCsuLTYjvjkJ8P/4MBsOvWJNUOJlIXg/lkMCwxwfQkWkIqj1ukhla4Up8yE5VSsBifs4hgLCbetlxpKLJRirFbCNfJb2AjZNxi/FyLOIAnWeqWe+qCjvlupzfeR5RWX/VaGoFAUxP4FFndXOuv5dIQJ1mCjooG2xY0WrVZr3hcjlyZeCnzEtVAbHOpvMfYXomSMi4X4CvHLHn4Azb2Kr9gGiwPNEgynRX+32A7XxMguImZrFgKMOYjE7Ra/nacYJA/iirAfX0I1b+1FuM2gYxe9tMGRA7qu57weaMXhrne7ny5J8qrv8NINbyt6nzPOYVpP02R62hlns1POOOGJd9ohe8UO/lu80Q1Jknza4b/twE0RjnjQFo7p49zw6E8/zNzvmnKD1O49dj3+d/jAFo+L02Noo/QvL+qA7f4C0Y4ZkYUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">082093708308221037bab6cfeeaad32b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>2b2017708308221037bab6cfeeaad385</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>0442897b-6b7f-465d-b7af-680c7878d53a</ui_id>
+        <values>H4sIAAAAAAAA/+1Z32+jOBD+VyKe0xwGAk3eVu1VWmnv9tREfTmtkDFDYp0DnDHt5qL872cb8yMJyTa76Sor9allxoy/mfm+wW43VlaKvBTFPPtQFHSRWtO/vwwtmiqb/H1jpXgF1tSKS44FzdJQrHOwhtYzZqWyw9ecUUJFWC+QvpgWOcPrJ7Pkd7Nk0FlClpTFHMx2OeZyFwHcmm72XDSWEbxJ4I5vkRe4totc2458BL7vBX6U+Di4HcuADEfA5NJ7s8dgXuE8Al//mMq9Mkrq508mxF1tzHisICHbHso8BaQxSDQJZgUMrRVOYywyvm4sHHD8OWWtYUlTIeNZavHXgv4nd/RstS4BmR+Bytc8hqZulTm5xwLPBC+JKLlZWsGt+lIn3FfdU80xSdnbYRvjEZh0P0NfDG58PTFQN8ZfwAmkAi96o+SNtyeOs5WNjiHBJRN3l0sRXSBF50IpuirFqn2fc+2aWq7iHY5Y3dyMlav0z4qvVlOQp1NCq5bcf1tvZSFRQa4orDhpCJrMltnLY82/B5pqrMbJMoJZ84SF4DQqhWrNxgIGKxkoXOE8p+kizHn2TPXLMo3VaMHkwyhh2YvcVE2VESYKyEgqBo8epP1em58wp6oAf8gw8uXt0CrWxR3DRdGWQcoj/LdUSKqimBxCXUL9CuE0Fx+I6qCBq5pmhN/piqAr4KEebaEEAuq507/DwXX2nIoSFPvIR1Hg+o6cU65HfAL+BAAhPHHszpzqcEnjGmhcA4VrYIC9OgMzzHTVtT3sOOqpJscJ/Dav7G8w2HSsS0y2vlFwqJ2zpPOr8F+yqAgrOpvc9OZvoouKSi23LiuEW9t1XXtCxm7QCCGOAZIkiJADqFcILeV7wBmOS+LBQpeqy+2PjfWd2e/M1uTp+UBvNsjzkxij4OY2QP6N58buzcQN7BsfPMeLyC2eeN6ofnO7PRSCPZgBydK4OFsRkCBvTI4dYSPoOcLu66GT0u7E37V/OgxTH2au8CD7LoqfKIqDg26YSSCq+R2Z4ERocHvUr83n0T4m2EP2+AjtHb9D+7k+BvH9c/qgA/H1yZxzv3OvUBbtpaOu+357+u5xESQZ737KG0NzJTp90/rGZuiszZwfvvM0VOy959TePbHLkl6j1muEZB2eund2lhkOt0Q8fzDs/tnju6fE29yWUOKM46OzIXBPzIbDW9IroH/vNcm7wvnwUz6bP6ik/q/b8F1hsixLiEt2YT0l0XgsD5lH9OQ7u0dMWfmBWMIgyZgsqXrqoDqG1hSsZfCueB47diOe8QXF4zq74iGrtAuuT0iz1n0Fgjr/HJrMAHOyfKDAVIt1X361P8Z9USyvYjeVJrSQEObK9rH+X4NyrGWGlHRNLxn/R4Fvbdv/ASsbDAO1GAAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">402093708308221037bab6cfeeaad329</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned>current_try,integration_success,integration_error_message</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>71ee3976-074a-447f-91db-af03d341b41e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>2f2017708308221037bab6cfeeaad383</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>7aa34ecf-3d9b-45ba-ac4d-0560caf284ad</ui_id>
+        <values>H4sIAAAAAAAA/+1YXU/bMBT9K1Ve13RpPpqEPSEYUqUxpNHxMqHoxnaKNTcJtgN0Vf/7rpM0LXRjQ+qQJvLWHNvX5557j3zVlVVUuqy0mhXHSvF5bh19ux5aPDcY/l5ZnFpHljW0clgw/EUqKVmuEy2XCN6BqFizTrkqBSyvtgi54YLi5iZkCRIjaCato9WTpfoKj4yJE3ok8ojvumPHC1NIJyRjDIB6McOAAlImcOtJw2Ewqzn8kphelgbkuWZzvLIBPrXnpx1aSGoIOUOLPWiWU4ZMMhCKDa0F5BR0gdE2iGRAL3KxBW4wfJPqAh4U/4E3+o7ZlzGkQloZus+klaiBs1PQcKllRXQlO8UKTphqVKEsg0rok12s2XBRal7kzRENqdicLkS1yD83clhdgJ2KVApJsNIkapi3aWSXN8X9lw3LM57XmrSLoiAgui/QWvK00obPyqr47KnMDbQvNBNsYaqzgLLk+TwpZXHH63uQ9mI0F/gxykRxj/xMG46AmBxHWAIYnSF+WsNXILlJ+BzDtPd9zfltxaamhcIsdMcQ+TYlGbX9AFI7hiCyo4x6NA0Dx3V8az201FKdCFBqKxXWKLmtTKKNcK1ESaOyOUIkL/UxkrrDI1g1tsHqdt7pPfx8bjNehfXOBxlN6tzqnO9AjnZiDN4Nxh+s9Xo93LNfrbQEo02iKoKNoXZs6Oz7sC7ci82YPWvGdLJjxumW0eCyY/Qs3dacaVEIBvkTc85QrvdnLeuD+9NzX9Of3osMuilVC58+LqTzD/27rcRj/z6qxatYGHxKY+J6Nj4Hru1nLEb3Emp7URgxDyI3duAgFq4F+YPBmJSFTBbYtDBnOzZbrSKXoDuCwPZoBLZPnNiOvUlgBzQbh1nEUhKGoyRpFEiUBl2pJBm1odbrfZ8eJOYLX1znWZP7vzH5R6PK4LxT5S+Eaw2vsPny+RO/X27Ag3s9cpw3+Rp3Mj82cyf0qxjZDScBvsKR7XlhZvuO49lRzIgduywIgtilk/gwb3Fj5GvjzoZPP7b2Y2s/tvZjaz+29mNrP7b2Y2s/tv4fr/EbHVspI1whz5khNd3872oWltiinOxC94X8bjLcYuuf+Ci6JcEVAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">082093708308221037bab6cfeeaad33b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>2f2017708308221037bab6cfeeaad388</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>f2dea444-f049-4bd1-8293-e7e4b29e7cb7</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBnQdAjNhrfAgcGAqQN0AS5tIGwoiibKEWqfNhxBf97l6JkG4nbJG2PvYmz5HJmuAN1RDnbOmvu1aUxfCnJ7MtjRLj0GH53RELDyIxQJStuuZJFD0RkDcL5wrW0bKnBl84WwIXTvlpx0wrYPvx2E11xUWk23NmCxs6WaTLrnpV4hT3qBOr0gqY0z6Z5liTZh/O0nOZlmlU5MMixoYCSCdw6H8me3fRI9EsVdtt63FjN5XJY3wxd7kZQ6cqzSpOIsCfLZMWQTw3CsIg0ICuwSm/3iGZQ3UpxAFZcWmxH/OYnw3/ghdlk4jfWDCVSFor7ZTGYF+D6CiwgFUetd63H6Epxykwwp2I1OGHnx1jYcNt6qeGIhVKMp5VwjfwUHCH7BuNbIeIMkmCtV+qpDzrqu5XafB5ZLrjsXRmKQlEQ+xVY9K501vPpCBOswUZFA22LjhatVmveH0YuTbwUuIhroTZ4qZ/BGKgnHqOxEC8Qv+rhB9Dcq/iIbfBwoFmC4bTo5xXboU2M7CJitmYuwJiDSHS3+O48xSB5EFcEf/wRqnlrL/HmNRt07KKX4380+V3Xc14PtGJ+GPLCOIqPYXa7ry5J8qpv9zIWf9DhfZm5gEk9SZPJ6cycT09l5kRa3hmU7JWg+Fd6Y06SJPkflL8OCjdFGO9BWximf5eTRx+KcOfea8oNUrv32PX4N/GFLQ4Xp8fQRulvXtQB2/0EYlpPlZcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">411c073c83c4221037bab6cfeeaad3be</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned>active,retry_count,retry_timeout,integration_success,current_try</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>632017708308221037bab6cfeeaad371</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>eea8c487-ce6f-472c-a1b9-615fd8364ef3</ui_id>
+        <values>H4sIAAAAAAAA/+2aW2vbSBTHv4qZpy5YXkmja/apJAQC2wuNty/bYo5mRs6wsqSORknc4O++ZyTZVnMxBOIS2nkx0tFc/ufy4wyD70jV6rrVzbx62zRyWZKTf79OiSyNDZ/viOTkhJApKWEl8AmYltcC36+haI3BxWcum7qA9efBlEPRmCHsShZciWHNGhQuoYUiJ3f3PnV7xK7H3JiyhLLA9z2XxhlkEcuFAOA0TXHBAjJR4NC3WxH3Rel1bd6zqioElIPh72HWXLXiz/NBW6W4UeJOibjVouQCJXS6p2QFJQddqfXOogTwD2WxN1zJUvdhWcFtI7/jptQ343KBTjHRf9u9LoYA9eb8DDRcatUy3aphKLuqJBNNHw4ucmgLfTq29QM+1FpWGDRCjW+QFdvpVdGuyvd9NMhuhfsJGcxnP6bLZLBtUKSoTSCMZ4Ob+eVVdfNp68W5LLuYDR+LikGxewOtlcxabfTekVbO72eiNz2aC1GIFW67WEFdy3K5qFV1Lbut0LHVbFngyywvqhuUaGp0ZvJdlTPMEszO0X7WmT+DkiYk73AZnGy2/KeU31pxYcorjMAFlroOTTzqBKGgTiai0BEcEmBumsYBJ5spadbNaQFNsw8mpnHxrTW+9qEdorToEtFNYUrWeijKE0ys2NpMLIbixKdD43AXrIZysmxmS6E/qgpd0Os3X8jtwguTgHr+IoNGNDOsPLFUYAKw6Jf+QqaTLgt//EU2m830AbO4tFovWNViavfgPuT22cjmySFkwRsh+8lomJwOGh4VNsDbOdjlbwzvxc764uQG7s8k91ngHpHMfZh/JHMf6J+CZe5GbhhmwuEJ407AEs8B8LgTRqEPeUxpGEdHwXJce8dgc7S+AZQehlPLlcBO/LJ4Hu6o2UM85zsVT4iziP6GiMY5ZGGcMSfOue8EgY+Imp8o92IaCZFGLDwiotvqOx6kww4dpq77FKjjeU3LsHiaEa7eQ16Nvue3VHaQ2WjE7MVe0ORyJ+igWns+tufjJyiHgPOU+dShzEPKc5E6SY4tmSZxIigkfurCi1DeBeQRvlirlJmGRB7myns2VPQgVKkYQXXaq5jMOxWPSrNN8LdsgrHvQRI4nOV4Tg0hc1IIE2SEU57Foeu7wQvi8dUQ0Oux1zC2zfw6bcZew9hrGNveXl17s9cw9hrGIvqqEbXXMPYaxp6Pf/Xzsb2Gsdcwtgm+omsYLphsUOfciLrY/i/GfFhjWUo2Nt1U6j/j4d62+R+9BOPQYSMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cd1c073c83c4221037bab6cfeeaad3c3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Do the following until">eaeb040687210300e6c2c88fc0e3ec89</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>672017708308221037bab6cfeeaad374</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</ui_id>
+        <values>H4sIAAAAAAAA/+1V32vbMBD+V4aejXHipSl9KymFQdeytfRla81FkhMxWfL0I6ln/L/vZCtOSFu2ssFelifrO93dd5/uIy3R3tXe2Tt9bq1YKXL25SEhQgUMv1uioOLkjFCtmHBCq6IHErIB6UMAP5mwtYTmfo/QtZDM8FitBoM5jhty1h6FBMOEJYMpXWbv53mWT/IsO5lM6XSel/g7gfksw4ISllzi1cWOxrurHkle5eeaOuDWGaFW8XwVq9zuQG1YYDXJsoTwJ8cV40ioBGl5QipQDJw2zYgYDuxGyT2wFsoNE1fwZMUP7DidzcLFkuOMNMoxHoso1QCXF+AAuXjqvBmV04JyO6jDeAleusUhNly4qcOsQ4qDpdxla+krdT1IQsYCBy/jLZLgdZg0UI9zlLdrvf28Y3kpVC9LDEpNQY4ncCje0rvApyVc8goLFRXUNUpa1EZvRJ+MXKp0JfGQllJvsWlYrxRoIJ6isJBeIn7Rw/dgRJjiI5bB5C4htrELCdbuZ0ERi+8+MBkmizMUgwwhhRpRu3NssOGRbpc8X+CD3W3bntomdk/xNfnKQL9G1lPU3HbdV59lOcNX4o/Xn44zqDcmkHCmiTf58RXDMVhQ7ZXruudu+Scc3uZPNp/kp+Vr/jylL/nzBWe+0ZTTX5kyyPGbnsxCrf+m/CNT4jLYYvBYnK1v/hfN+hCcOfQctabCIrW7gH3Y/SmFQIPbJeghtNXmWxhqj3U/AWDmQAzeBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">811c073c83c4221037bab6cfeeaad3c5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned>integration_success</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>6b2017708308221037bab6cfeeaad375</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>552010e3-64a3-4487-95ef-b80bc886603e</ui_id>
+        <values>H4sIAAAAAAAA/+1VTY/aMBD9K5XPgUKClo/bahESUtuVCt1LtYom9gSsOnbWH7AU8d87TgLsrqreeuMU+409894bj3JkJvg6eLc2987JjWazn88JkzpitD4yKdiMsYRpqJBWUnvcWPDS6NwFztE5Cu5AhRgd0lpIVys4PHWQt/RJGN9KJSx2+WuwlM6jZbPjh1BTr+RDPhhnfJLxUZoOB9m4gOKOl4gAIivuKKGCAhUdXV4JfVpdCP2TrT/UMVgYoxB0B3zp8q2J7+cFKBdZGysix0HC8NWjFkjkyhhLWAVagDf2cEEsgnjU6gpsqXxrXgWvTv6molkaz5VIcjm2scs275xr4XIOHlbkHvfBdkf51kjS0BolsISg/MNbrD3wWEfBdCWL2qBQ5+tGhUp/a61hlwznTpWd6A6ev+/jgCLBEUmsoxFRWSezXG3N/vtZxULqxrMuqAwHddmB91YWwUe+Rxbk+mMnWuivvUCFFZXNK6hrqTd5bc1ONqVIWNXfKNr0S2X2RDG+5D7waEOfugT9BeHzBn4CK6MlXykNXY4lf2j5EnAZHx6MhJjyNOtlfJj2RiVOe5OSi142GU8wg0k6HQA7Jcwd3IMC565mUhvzlxC1ttZ2LuVNI5or3Mra3xOpHXaGnJ7j6LR8btN2m7bbtP3vaRPIpSOe60hqef7LxcCBHrHkb6G9sb+iwit2+gO+ai41LwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">8c2093708308221037bab6cfeeaad329</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>71ee3976-074a-447f-91db-af03d341b41e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>ab2017708308221037bab6cfeeaad384</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>3bc93df3-1a36-4016-ae9c-5e316d34bcaf</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxvijCWvfSkph0K2wlr5sxVzLciImS54+knrG/31XtuKENmUr6+NejHWke+85xzq4J8rZ1llzry6N4WtJLr49RoRLj+F7TyQ0jFwQqmTFLVeyGIGIbEE4v4GvFTetgO7hgNANF5VmoVsLGmss0+Sif7bFKyyoE6jTc5rSPFvmWZJkH8/ScpmXaVblwCDHhgJKJvDoak/jw82IRK/ys13rcWM1l+uwvgld7vag0pVnlSYRYU+WyYohnxqEYRFpQFZgle5mRDOobqU4ABsu7SS4gSfDf+HAbLHwB2uGEmlwY14WwakJrq/AAlJx1Do9G6c4ZWYyp2I1OGFXx9h04Lb1UqcSC6XYVyvhGvllcoTMDY4+jDNIgrVeqacedNR3G7X7umd5zeXoStgUioKYV2DRu9JZz6cnTLAGGxUNtC06WrRabflYjFyaeC1wEddC7XCov10xUE88RmMhvkb8aoQfQHOv4jO2weKJZgmG02K8idgObWJkiIjpzEqAMQeR6G7x03mKk+Qgrpj88SVU89Ze4uQtCzqG6OXFPrrTfT9y3gZaMXVa+5ZWd8Pw3SVJTsdn9fygZnikoMpJOwwvk/Fufd+Wr3NY1Is0WZzO19nyVL5OJOuNocr+ECr/Rf8yU0mS/A/VP4eKm2KKQtA2Dn/HTD36AE0zZ68pN0jt3mOf9v8Uv9Hh5eL0GNop/cOLOmDDb6Qy7judBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c82093708308221037bab6cfeeaad33a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>6abb08c1-54de-4b8c-9e36-0d62a3bad9fb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>af2017708308221037bab6cfeeaad387</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>61ffdb3e-1de8-4c26-a984-732b0be29ee1</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">891c073c83c4221037bab6cfeeaad3c2</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0e557b2-6410-4bf9-919b-05c09d21046c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>e72017708308221037bab6cfeeaad373</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>3a91813c-e115-4e70-a2e6-441d33097540</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">802093708308221037bab6cfeeaad328</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>a15b7cca-678c-46d0-b2b5-82f10ce4d25c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>e72017708308221037bab6cfeeaad376</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <ui_id>71ee3976-074a-447f-91db-af03d341b41e</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lZRnWdDD8iO3wIGBAGkDNEEuTUCsSMomSpMqSdlxDf97l5JsB036CJpjb+bscndmxIF3xDS+bry7MxfOyYUm518eIyJ1wPD3jmhYCXJOmNFcemk0bYGIrEE1oXClvVhYCKWzOUjV2FDl0tUKtve/bWJLqbgV/c4aLE72wpLz3U8lyXFGlUCVTlnK8myUZ0mSTYZpOcrLNOM5CMhxoIJSKGydHcieXbdI9EsVflsH3Hkr9aI/X/dTbg+gsTywSpOIiCcvNBfIpwLlRERWoDl4Y7dHxArgN1qdgKXUHseR0Pzk5HdcmBVFaKwESmSiKx6PtDevg6tL8IBUGuaDay3GlkYy4TpzuKigUX72HOsabuogtbvioVSH20Y1K/2pc4QcBxy+FSKNQxKiDkoD9V5Hdbs0m88HlnOpW1f6ojIM1PEEHr0rGx/47IhQYoWD6ArqGh2ltTVr2V5GLqt4ofAQV8pscGl4gzGwQDxGYyGeI37ZwvdgZVDxEcfg5Y5mCU4y2r5XHIc2CbKPiNu6mQLnTiLRXfqtCRQ7yb042vkTrjAra3+Bm9ei17GPXj7/Zy9/t5tkbJyzohjkfAKDIUumg2k+KgYFr9JxNRElG49jSjs51HnwjaM0ZoaL/f7DQ5MkOU9epuX9Br8tYVMoqiJNitcTNhy9lrBXsvXGWGV/iFX4pn+ZqiRJ/sfqn2MlHe3C0Gtrl79jqh5DhLqdR6+ZdEjtLmBXh/+eUNji45LsObQx9msQdcL2PwBGmAGsxQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN272017708308221037bab6cfeeaad368,672017708308221037bab6cfeeaad365,6b2017708308221037bab6cfeeaad34f,a72017708308221037bab6cfeeaad362,e32017708308221037bab6cfeeaad36b,e72017708308221037bab6cfeeaad35f"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=f06055be-d8cd-4c81-aa1d-5652af733576</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>retry_count</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Retry Count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>272017708308221037bab6cfeeaad368</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=7fab57bc-7fd2-4421-a421-6f1736ee96c5</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>retry_timeout</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Retry Timeout</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>672017708308221037bab6cfeeaad365</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2765cfd8-337f-4003-89ec-92e55592d694</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>integration_error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Integration Error Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>6b2017708308221037bab6cfeeaad34f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=56a0ac90-3813-45e3-be65-eda8ac09974d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>active</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Active</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>a72017708308221037bab6cfeeaad362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a4dd9c23-3c12-4fe9-8fcd-3878e3a8290a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>integration_success</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Integration Success</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>e32017708308221037bab6cfeeaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=7f721a84-dcfd-45ab-9a58-8fd3db750204</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current_try</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Current Try</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Weather Integration Subflow">1f20d3708308221037bab6cfeeaad3de</model>
+        <model_id>1f20d3708308221037bab6cfeeaad3de</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_1f20d3708308221037bab6cfeeaad3de</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:59</sys_created_on>
+        <sys_id>e72017708308221037bab6cfeeaad35f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de^sys_idNOT IN532017708308221037bab6cfeeaad31c,9b2017708308221037bab6cfeeaad312"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>base</element>
+        <help/>
+        <hint/>
+        <label>Base</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>532017708308221037bab6cfeeaad31c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>city</element>
+        <help/>
+        <hint/>
+        <label>city</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>9b2017708308221037bab6cfeeaad312</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_1f20d3708308221037bab6cfeeaad3de^sys_idNOT INdb2017708308221037bab6cfeeaad324"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>output</element>
+        <help/>
+        <hint/>
+        <label>Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_1f20d3708308221037bab6cfeeaad3de</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:54:58</sys_created_on>
+        <sys_id>db2017708308221037bab6cfeeaad324</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:54:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_1f20d3708308221037bab6cfeeaad3de"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>ce890bf483c4221037bab6cfeeaad330</sys_id>
+        <latest_snapshot>1f20d3708308221037bab6cfeeaad3de</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch4a-12-16-2024_01-07-2025_0947.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=ce890bf483c4221037bab6cfeeaad330"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=ce890bf483c4221037bab6cfeeaad330^sys_idNOT IN043017708308221037bab6cfeeaad3cc"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"043017708308221037bab6cfeeaad3cc","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Weather Integration Subflow">ce890bf483c4221037bab6cfeeaad330</plan_id>
+        <snapshot>2da157f08308221037bab6cfeeaad332</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 19:55:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>043017708308221037bab6cfeeaad3cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 19:55:01</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

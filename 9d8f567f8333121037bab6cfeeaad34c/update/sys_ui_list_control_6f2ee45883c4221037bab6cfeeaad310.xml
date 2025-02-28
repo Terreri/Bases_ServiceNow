@@ -17,7 +17,7 @@
         <list_edit_type/>
         <name>x_1584312_bases_base</name>
         <new_condition><![CDATA[var grRegistrations = new GlideRecord("x_1584312_bases_registration");
-grRegistrations.addEncodedQuery("base=" + parent.base.sys_id.toString() + "^stateIN2,3");
+grRegistrations.addEncodedQuery("base=" + parent.sys_id.toString() + "^stateIN1,2,3");
 grRegistrations.query();
 
 var userCount = 0;
@@ -25,14 +25,17 @@ while(grRegistrations.next()){
 	userCount++;
 }
  
-var maxCapacity = parent.base.max_capacity; 
+var maxCapacity = parent.max_capacity;
 var answer;
 
+gs.info("maxCapacity:" + maxCapacity + "userCount:" + userCount);
 
 if (maxCapacity == userCount) {
     answer = true;
+	gs.info("Essa é a answer:" + answer);
 } else {
 	answer = false;
+	gs.info("Essa é a answer:" + answer);
 }]]></new_condition>
         <new_roles/>
         <omit_columns_if_empty>false</omit_columns_if_empty>
@@ -52,7 +55,7 @@ if (maxCapacity == userCount) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6f2ee45883c4221037bab6cfeeaad310</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>x_1584312_bases_base</sys_name>
         <sys_overrides display_value="">global</sys_overrides>
         <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
@@ -60,7 +63,7 @@ if (maxCapacity == userCount) {
         <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
         <sys_update_name>sys_ui_list_control_6f2ee45883c4221037bab6cfeeaad310</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-27 19:47:26</sys_updated_on>
+        <sys_updated_on>2025-02-28 13:41:29</sys_updated_on>
     </sys_ui_list_control>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>6f2ee45883c4221037bab6cfeeaad310</id>

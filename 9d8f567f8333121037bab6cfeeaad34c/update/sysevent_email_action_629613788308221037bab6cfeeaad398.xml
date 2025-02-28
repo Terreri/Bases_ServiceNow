@@ -36,38 +36,38 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello, ${base_manager}, the base ${name} was completely filled<br><br>There are the users in the base ${name}:</p>
-<p>${mail_script:Get_Users_in_Base}</p>]]></message_html>
+        <message_html><![CDATA[<p>Hello Administrators!</p>
+<p>The temperature Routine was completed</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>Send Users in Bases List When Fullfilled</name>
+        <name>Confirm Temperature Routine </name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
-        <recipient_fields>base_manager</recipient_fields>
-        <recipient_groups/>
+        <recipient_fields/>
+        <recipient_groups name="Bases Administrators">0815ea378373121037bab6cfeeaad39a</recipient_groups>
         <recipient_users/>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Base ${name} was completely filled</subject>
+        <subject>Temperature Integration Routine Complete</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-02-27 18:14:07</sys_created_on>
+        <sys_created_on>2025-02-28 20:24:24</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>ac0d61a88340221037bab6cfeeaad354</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Send Users in Bases List When Fullfilled</sys_name>
+        <sys_id>629613788308221037bab6cfeeaad398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Confirm Temperature Routine </sys_name>
         <sys_overrides/>
         <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
         <sys_policy/>
         <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
-        <sys_update_name>sysevent_email_action_ac0d61a88340221037bab6cfeeaad354</sys_update_name>
+        <sys_update_name>sysevent_email_action_629613788308221037bab6cfeeaad398</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-28 14:28:28</sys_updated_on>
+        <sys_updated_on>2025-02-28 20:24:24</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
