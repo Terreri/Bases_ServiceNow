@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="fb90aebf8333121037bab6cfeeaad374" extends="task" label="Registration" max_length="40" name="x_1584312_bases_registration" type="collection">
         <element label="Reproval Reason" max_length="4000" name="reproval_reason" type="string"/>
-        <element label="Function" max_length="32" name="function" reference="x_1584312_bases_function" type="reference"/>
+        <element label="Function" max_length="32" name="function" reference="x_1584312_bases_function" reference_qual="name!=Base Manager^EQ" reference_qual_condition="name!=Base Manager^EQ" type="reference"/>
         <element label="Base" max_length="32" name="base" reference="x_1584312_bases_base" reference_floats="true" reference_qual="javascript: new x_1584312_bases.BasesUtils().refQualBases(); " type="reference" use_reference_qualifier="advanced"/>
+        <element label="User In Registration" max_length="32" name="user_in_registration" reference="sys_user" reference_qual="javascript: new x_1584312_bases.BasesUtils().refQualGroupUser(); " type="reference" use_reference_qualifier="advanced"/>
     </element>
 </database>

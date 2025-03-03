@@ -10,12 +10,42 @@
             </choice>
         </element>
         <element label="Integration Error Message" max_length="4000" name="integration_error_message" type="string"/>
-        <element label="Base Manager" max_length="32" name="base_manager" reference="sys_user" type="reference"/>
+        <element label="Base Manager" max_length="32" name="base_manager" reference="sys_user" reference_qual="javascript: new x_1584312_bases.BasesUtils().refQualGroupManager(); " type="reference" use_reference_qualifier="advanced"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
         <element label="Longitude" max_length="100" name="longitude" type="string"/>
         <element label="City" max_length="40" name="city" type="string"/>
         <element label="Max Capacity" max_length="40" name="max_capacity" type="integer"/>
-        <element label="State" max_length="40" name="state" type="string"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Goiás (GO)" value="Goiás (GO)"/>
+                <element inactive_on_update="false" label="Mato Grosso do Sul (MS)" value="Mato Grosso do Sul (MS)"/>
+                <element inactive_on_update="false" label="Minas Gerais (MG)" value="Minas Gerais (MG)"/>
+                <element inactive_on_update="false" label="Amazonas (AM)" value="Amazonas (AM)"/>
+                <element inactive_on_update="false" label="Roraima (RR)" value="Roraima (RR)"/>
+                <element inactive_on_update="false" label="Acre (AC)" value="Acre (AC)"/>
+                <element inactive_on_update="false" label="Rio de Janeiro (RJ)" value="Rio de Janeiro (RJ)"/>
+                <element inactive_on_update="false" label="Pernambuco (PE)" value="Pernambuco (PE)"/>
+                <element inactive_on_update="false" label="Santa Catarina (SC)" value="Santa Catarina (SC)"/>
+                <element inactive_on_update="false" label="Maranhão (MA)" value="Maranhão (MA)"/>
+                <element inactive_on_update="false" label="Pará (PA)" value="Pará (PA)"/>
+                <element inactive_on_update="false" label="Rondônia (RO)" value="Rondônia (RO)"/>
+                <element inactive_on_update="false" label="Sergipe (SE)" value="Sergipe (SE)"/>
+                <element inactive_on_update="false" label="São Paulo (SP)" value="São Paulo (SP)"/>
+                <element inactive_on_update="false" label="Ceará (CE)" value="Ceará (CE)"/>
+                <element inactive_on_update="false" label="Paraná (PR)" value="Paraná (PR)"/>
+                <element inactive_on_update="false" label="Rio Grande do Norte (RN)" value="Rio Grande do Norte (RN)"/>
+                <element inactive_on_update="false" label="Paraíba (PB)" value="Paraíba (PB)"/>
+                <element inactive_on_update="false" label="Alagoas (AL)" value="Alagoas (AL)"/>
+                <element inactive_on_update="false" label="Espírito Santo (ES)" value="Espírito Santo (ES)"/>
+                <element inactive_on_update="false" label="Piauí (PI)" value="Piauí (PI)"/>
+                <element inactive_on_update="false" label="Rio Grande do Sul (RS)" value="Rio Grande do Sul (RS)"/>
+                <element inactive_on_update="false" label="Tocantins (TO)" value="Tocantins (TO)"/>
+                <element inactive_on_update="false" label="Mato Grosso (MT)" value="Mato Grosso (MT)"/>
+                <element inactive_on_update="false" label="Amapá (AP)" value="Amapá (AP)"/>
+                <element inactive_on_update="false" label="Distrito Federal (DF)" value="Distrito Federal (DF)"/>
+                <element inactive_on_update="false" label="Bahia (BA)" value="Bahia (BA)"/>
+            </choice>
+        </element>
         <element label="Latitude" max_length="100" name="latitude" type="string"/>
         <index name="index">
             <element name="base_manager"/>

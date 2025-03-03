@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="INSERT_OR_UPDATE">
+        <can_read>true</can_read>
+        <can_share>false</can_share>
+        <can_write>false</can_write>
+        <dashboard display_value="Bases Overview">4078378483c0221037bab6cfeeaad3ef</dashboard>
+        <group display_value="Bases Administrators" name="Bases Administrators">0815ea378373121037bab6cfeeaad39a</group>
+        <owner>false</owner>
+        <role/>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-03 14:19:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2010657d8380221037bab6cfeeaad336</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>4078378483c0221037bab6cfeeaad3ef</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Bases" source="x_1584312_bases">9d8f567f8333121037bab6cfeeaad34c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Bases">9d8f567f8333121037bab6cfeeaad34c</sys_scope>
+        <sys_update_name>par_dashboard_permission_2010657d8380221037bab6cfeeaad336</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 14:19:05</sys_updated_on>
+        <user/>
+    </par_dashboard_permission>
+</record_update>
